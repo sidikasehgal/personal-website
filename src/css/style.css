@@ -72,7 +72,6 @@ a {
 
 nav {
   display: flex;
-  gap: var(--space-3);
   align-items: center;
   justify-content: space-between;
   padding: var(--space-3) 0;
@@ -81,14 +80,11 @@ nav {
   font-size: 14px;
 }
 
-nav .links {
-  display: flex;
-  gap: var(--space-3);
-}
-
-nav a {
+.site-name {
   color: var(--text);
   text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 nav a[aria-current="page"] {
@@ -97,15 +93,43 @@ nav a[aria-current="page"] {
   padding-bottom: 4px;
 }
 
-#theme-toggle {
+/* Theme toggle switch */
+.theme-switch {
   background: none;
-  border: 0.5px solid var(--border);
-  color: var(--text);
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-family: var(--font-heading);
-  font-size: 13px;
+  border: none;
+  padding: 0;
   cursor: pointer;
+  line-height: 0;
+}
+
+.switch-track {
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--border);
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+[data-theme="dark"] .switch-track {
+  background: var(--text-muted);
+}
+
+.switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+[data-theme="dark"] .switch-knob {
+  transform: translateX(20px);
 }
 
 main {
@@ -143,8 +167,4 @@ footer {
   font-size: 13px;
   color: var(--text-muted);
   text-align: center;
-}
-
-@media (max-width: 640px) {
-  nav .links { gap: var(--space-2); }
 }
