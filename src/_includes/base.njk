@@ -16,12 +16,10 @@
 <body>
   <div class="container">
     <nav>
-      <div class="links">
-        <a href="/" aria-current="{% if page.url == '/' %}page{% endif %}">About</a>
-        <a href="/bookshelf/" aria-current="{% if page.url == '/bookshelf/' %}page{% endif %}">Bookshelf</a>
-        <a href="/reading-list/" aria-current="{% if page.url == '/reading-list/' %}page{% endif %}">Reading list</a>
-      </div>
-      <button id="theme-toggle" aria-label="Toggle dark mode">Toggle theme</button>
+      <a href="/" class="site-name">Sidika Sehgal</a>
+      <button id="theme-toggle" class="theme-switch" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="switch-track"><span class="switch-knob"></span></span>
+      </button>
     </nav>
     <main>
       {{ content | safe }}
@@ -32,11 +30,17 @@
   </div>
   <script>
     var btn = document.getElementById("theme-toggle");
+    function syncPressed() {
+      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      btn.setAttribute("aria-pressed", isDark ? "true" : "false");
+    }
+    syncPressed();
     btn.addEventListener("click", function () {
       var current = document.documentElement.getAttribute("data-theme");
       var next = current === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
+      syncPressed();
     });
   </script>
 </body>
