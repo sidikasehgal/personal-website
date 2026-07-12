@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Serif:wght@400&display=swap");
+
+:root {
+  --font-heading: "IBM Plex Sans", sans-serif;
+  --font-body: "IBM Plex Serif", serif;
+
+  --bg: #ffffff;
+  --text: #111111;
+  --text-muted: #555555;
+  --border: #dddddd;
+  --accent: #b8860b;
+  --accent-tint: #fdf3dc;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+
+  --measure: 700px;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --text-muted: #aaaaaa;
+  --border: #2a2a2a;
+  --accent: #e8b84b;
+  --accent-tint: #2b230f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1vw + 14px, 18px);
+  line-height: 1.7;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, .heading {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(28px, 3vw + 16px, 44px); }
+h2 { font-size: clamp(20px, 1.5vw + 14px, 28px); }
+h3 { font-size: clamp(17px, 1vw + 12px, 20px); }
+
+a {
+  color: var(--accent);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.prose {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) 0;
+  border-bottom: 0.5px solid var(--border);
+  font-family: var(--font-heading);
+  font-size: 14px;
+}
+
+nav .links {
+  display: flex;
+  gap: var(--space-3);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+
+#theme-toggle {
+  background: none;
+  border: 0.5px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+main {
+  padding: var(--space-6) 0;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  color: var(--accent);
+  background: var(--accent-tint);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin: 0 var(--space-1) var(--space-1) 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-3);
+  margin: var(--space-4) 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: var(--space-4) 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  nav .links { gap: var(--space-2); }
+}

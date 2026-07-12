@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} — Sidika Sehgal</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="links">
+        <a href="/" aria-current="{% if page.url == '/' %}page{% endif %}">About</a>
+        <a href="/bookshelf/" aria-current="{% if page.url == '/bookshelf/' %}page{% endif %}">Bookshelf</a>
+        <a href="/reading-list/" aria-current="{% if page.url == '/reading-list/' %}page{% endif %}">Reading list</a>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle dark mode">Toggle theme</button>
+    </nav>
+    <main>
+      {{ content | safe }}
+    </main>
+    <footer>
+      Sidika Sehgal
+    </footer>
+  </div>
+  <script>
+    var btn = document.getElementById("theme-toggle");
+    btn.addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme");
+      var next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  </script>
+</body>
+</html>
