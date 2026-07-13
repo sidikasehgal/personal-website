@@ -169,3 +169,16 @@ footer {
   color: var(--text-muted);
   text-align: center;
 }
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-link:hover {
+  color: var(--accent);
+}
