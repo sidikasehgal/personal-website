@@ -3,16 +3,199 @@ title: Bookshelf
 layout: base.njk
 permalink: /bookshelf/
 ---
-<h1>Bookshelf</h1>
-{% if collections.bookshelf.length %}
-<div class="grid">
-  {% for item in collections.bookshelf %}
-  <div>
-    <h3>{{ item.data.title }}</h3>
-    <p>{{ item.data.author }}</p>
+<section class="container">
+<div class="prose bookshelf-page">
+  <h1>Bookshelf</h1>
+
+  <h2 class="bookshelf-section__title">Currently Reading</h2>
+  <div class="current-read">
+    <img
+      class="current-read__cover"
+      src="https://covers.openlibrary.org/b/isbn/9781933368368-L.jpg"
+      alt="Cover of The Good Fairies of New York"
+      loading="lazy"
+      onerror="this.style.display='none'"
+    />
+    <div class="current-read__details">
+      <p class="current-read__title">The Good Fairies of New York</p>
+      <p class="current-read__author">by Martin Millar</p>
+    </div>
   </div>
-  {% endfor %}
+
+  <h2 class="bookshelf-section__title">Recommendations</h2>
+
+  <div class="shelf-toggle" role="group" aria-label="Group recommendations">
+    <button class="shelf-toggle__btn" id="toggle-genre" aria-pressed="true">By genre</button>
+    <button class="shelf-toggle__btn" id="toggle-region" aria-pressed="false">By region</button>
+  </div>
+
+  {% set genreOrder = [
+    "Literary fiction",
+    "Crime fiction",
+    "Magical realism",
+    "Historical fiction",
+    "Coming of age",
+    "Science fiction",
+    "Play",
+    "Non-fiction",
+    "Biography / autobiography",
+    "Business",
+    "Food"
+  ] %}
+
+  {% set regionOrder = [
+    "India",
+    "Asia",
+    "UK",
+    "Ireland",
+    "Europe",
+    "USA",
+    "South America",
+    "Australia"
+  ] %}
+
+  <div id="view-genre" class="shelf-view">
+    {% for genre in genreOrder %}
+      <div class="shelf-group">
+        <h3 class="shelf-group__heading">{{ genre }}</h3>
+        <ul class="shelf-list">
+          {% for book in books %}
+            {% if book.genre == genre %}
+              <li><em>{{ book.title }}</em> by {{ book.author }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div id="view-region" class="shelf-view" hidden>
+    {% for region in regionOrder %}
+      <div class="shelf-group">
+        <h3 class="shelf-group__heading">{{ region }}</h3>
+        <ul class="shelf-list">
+          {% for book in books %}
+            {% if book.region == region %}
+              <li><em>{{ book.title }}</em> by {{ book.author }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
 </div>
-{% else %}
-<p>No books added yet. Entries added through the CMS will appear here.</p>
-{% endif %}
+</section>
+
+<style>
+  .bookshelf-page {
+    padding: var(--space-6) 0;
+  }
+
+  .bookshelf-page h1 {
+    margin: 0 0 var(--space-5);
+  }
+
+  .bookshelf-section__title {
+    margin: 0 0 var(--space-3);
+  }
+
+  .current-read {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    margin-bottom: var(--space-6);
+  }
+
+  .current-read__cover {
+    width: 110px;
+    height: auto;
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .current-read__title {
+    font-style: italic;
+    font-size: 1.05em;
+    margin: var(--space-1) 0 0;
+  }
+
+  .current-read__author {
+    color: var(--text-muted);
+    margin: var(--space-1) 0 0;
+  }
+
+  .shelf-toggle {
+    display: flex;
+    gap: var(--space-3);
+    margin: 0 0 var(--space-4);
+  }
+
+  .shelf-toggle__btn {
+    background: none;
+    border: none;
+    padding: 0 0 4px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+  }
+
+  .shelf-toggle__btn[aria-pressed="true"] {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+
+  .shelf-toggle__btn:hover {
+    color: var(--accent);
+  }
+
+  .shelf-group {
+    margin-bottom: var(--space-4);
+  }
+
+  .shelf-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .shelf-group__heading {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin: 0 0 var(--space-2);
+  }
+
+  .shelf-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .shelf-list li {
+    margin-bottom: var(--space-1);
+  }
+</style>
+
+<script>
+  (function () {
+    var genreBtn = document.getElementById("toggle-genre");
+    var regionBtn = document.getElementById("toggle-region");
+    var genreView = document.getElementById("view-genre");
+    var regionView = document.getElementById("view-region");
+
+    function show(which) {
+      var isGenre = which === "genre";
+      genreView.hidden = !isGenre;
+      regionView.hidden = isGenre;
+      genreBtn.setAttribute("aria-pressed", isGenre ? "true" : "false");
+      regionBtn.setAttribute("aria-pressed", isGenre ? "false" : "true");
+    }
+
+    genreBtn.addEventListener("click", function () { show("genre"); });
+    regionBtn.addEventListener("click", function () { show("region"); });
+  })();
+</script>
