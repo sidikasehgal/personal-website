@@ -61,7 +61,10 @@ permalink: /bookshelf/
         <ul class="shelf-list">
           {% for book in books %}
             {% if book.genre == genre %}
-              <li><em>{{ book.title }}</em> by {{ book.author }}</li>
+             <li class="book">
+                <p class="book__title">{{ book.title }}</p>
+                <p class="book__author">{{ book.author }}</p>
+              </li>
             {% endif %}
           {% endfor %}
         </ul>
@@ -76,7 +79,10 @@ permalink: /bookshelf/
         <ul class="shelf-list">
           {% for book in books %}
             {% if book.region == region %}
-              <li><em>{{ book.title }}</em> by {{ book.author }}</li>
+            <li class="book">
+                <p class="book__title">{{ book.title }}</p>
+                <p class="book__author">{{ book.author }}</p>
+              </li>
             {% endif %}
           {% endfor %}
         </ul>
@@ -179,8 +185,19 @@ permalink: /bookshelf/
     padding: 0;
   }
 
-  .shelf-list li {
-    margin-bottom: var(--space-1);
+ .shelf-list li {
+    margin-bottom: var(--space-3);
+  }
+
+  .book__title {
+    margin: 0;
+  }
+
+  .book__author {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: var(--space-1) 0 0;
   }
 </style>
 
