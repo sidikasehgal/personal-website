@@ -106,12 +106,18 @@ permalink: /bookshelf/
     margin-bottom: var(--space-6);
   }
 
-  .current-read__cover {
-    width: 110px;
+.current-read__cover {
+    width: 200px;
     height: auto;
     border: 0.5px solid var(--border);
     border-radius: 4px;
     flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    .current-read__cover {
+      width: 140px;
+    }
   }
 
   .current-read__title {
@@ -159,13 +165,11 @@ permalink: /bookshelf/
     margin-bottom: 0;
   }
 
-  .shelf-group__heading {
+.shelf-group__heading {
     font-family: var(--font-heading);
     font-weight: 500;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-muted);
+    font-size: clamp(17px, 1vw + 12px, 20px);
+    color: var(--text);
     margin: 0 0 var(--space-2);
   }
 
