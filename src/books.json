@@ -1,0 +1,320 @@
+[
+  {
+    "title": "A Gentleman in Moscow",
+    "author": "Amor Towles",
+    "genre": "Literary fiction",
+    "region": "USA"
+  },
+  {
+    "title": "Anxious People",
+    "author": "Fredrik Backman",
+    "genre": "Literary fiction",
+    "region": "Europe"
+  },
+  {
+    "title": "Be My Guest",
+    "author": "Priya Basil",
+    "genre": "Food",
+    "region": "UK"
+  },
+  {
+    "title": "Before the Coffee Gets Cold",
+    "author": "Toshikazu Kawaguchi",
+    "genre": "Magical realism",
+    "region": "Asia"
+  },
+  {
+    "title": "Being Mortal",
+    "author": "Atul Gawande",
+    "genre": "Non-fiction",
+    "region": "USA"
+  },
+  {
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "genre": "Literary fiction",
+    "region": "USA"
+  },
+  {
+    "title": "Blink",
+    "author": "Malcolm Gladwell",
+    "genre": "Non-fiction",
+    "region": "USA"
+  },
+  {
+    "title": "Chronicle of a Death Foretold",
+    "author": "Gabriel García Márquez",
+    "genre": "Magical realism",
+    "region": "South America"
+  },
+  {
+    "title": "City of Djinns",
+    "author": "William Dalrymple",
+    "genre": "Non-fiction",
+    "region": "UK"
+  },
+  {
+    "title": "Dial A for Aunties",
+    "author": "Jesse Sutanto",
+    "genre": "Crime fiction",
+    "region": "Asia"
+  },
+  {
+    "title": "Everyone in my Family has Killed Someone",
+    "author": "Benjamin Stevenson",
+    "genre": "Crime fiction",
+    "region": "Australia"
+  },
+  {
+    "title": "Futureproof",
+    "author": "Kevin Roose",
+    "genre": "Business",
+    "region": "USA"
+  },
+  {
+    "title": "Ghosts",
+    "author": "Henrik Ibsen",
+    "genre": "Play",
+    "region": "Europe"
+  },
+  {
+    "title": "Greenlights",
+    "author": "Matthew McConaughey",
+    "genre": "Biography / autobiography",
+    "region": "USA"
+  },
+  {
+    "title": "Halla Bol",
+    "author": "Sudhanva Deshpande",
+    "genre": "Biography / autobiography",
+    "region": "India"
+  },
+  {
+    "title": "Heartburn",
+    "author": "Nora Ephron",
+    "genre": "Coming of age",
+    "region": "USA"
+  },
+  {
+    "title": "Karna's Wife",
+    "author": "Kavita Kane",
+    "genre": "Historical fiction",
+    "region": "India"
+  },
+  {
+    "title": "Lessons In Chemistry",
+    "author": "Bonnie Garmus",
+    "genre": "Literary fiction",
+    "region": "USA"
+  },
+  {
+    "title": "Let My People Go Surfing",
+    "author": "Yvon Chouinard",
+    "genre": "Business",
+    "region": "USA"
+  },
+  {
+    "title": "Like Water For Chocolate",
+    "author": "Laura Esquivel",
+    "genre": "Magical realism",
+    "region": "South America"
+  },
+  {
+    "title": "Lone Fox Dancing",
+    "author": "Ruskin Bond",
+    "genre": "Biography / autobiography",
+    "region": "India"
+  },
+  {
+    "title": "Magpie Murders series",
+    "author": "Anthony Horowitz",
+    "genre": "Crime fiction",
+    "region": "UK"
+  },
+  {
+    "title": "Making a Mango Whistle",
+    "author": "Bibhutibhushan Bandyopadhyay",
+    "genre": "Coming of age",
+    "region": "India"
+  },
+  {
+    "title": "My Grandmother Sends Her Regards and Apologizes",
+    "author": "Fredrik Backman",
+    "genre": "Coming of age",
+    "region": "Europe"
+  },
+  {
+    "title": "Perpetual City",
+    "author": "Malvika Singh",
+    "genre": "Non-fiction",
+    "region": "India"
+  },
+  {
+    "title": "Range",
+    "author": "David Epstein",
+    "genre": "Non-fiction",
+    "region": "USA"
+  },
+  {
+    "title": "Rhinoceros",
+    "author": "Eugène Ionesco",
+    "genre": "Play",
+    "region": "Europe"
+  },
+  {
+    "title": "Salt, Fat, Acid, Heat",
+    "author": "Samin Nosrat",
+    "genre": "Food",
+    "region": "Asia"
+  },
+  {
+    "title": "Same as Ever",
+    "author": "Morgan Housel",
+    "genre": "Non-fiction",
+    "region": "USA"
+  },
+  {
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "genre": "Biography / autobiography",
+    "region": "USA"
+  },
+  {
+    "title": "Stolen Focus",
+    "author": "Johann Hari",
+    "genre": "Non-fiction",
+    "region": "UK"
+  },
+  {
+    "title": "Strangers",
+    "author": "Belle Burden",
+    "genre": "Literary fiction",
+    "region": "USA"
+  },
+  {
+    "title": "That Will Never Work",
+    "author": "Marc Randolph",
+    "genre": "Business",
+    "region": "USA"
+  },
+  {
+    "title": "The Architecture of Happiness",
+    "author": "Alain de Botton",
+    "genre": "Non-fiction",
+    "region": "UK"
+  },
+  {
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "genre": "Literary fiction",
+    "region": "Europe"
+  },
+  {
+    "title": "The Hard Thing About Hard Things",
+    "author": "Ben Horowitz",
+    "genre": "Business",
+    "region": "USA"
+  },
+  {
+    "title": "The Housekeeper and the Professor",
+    "author": "Yoko Ogawa",
+    "genre": "Literary fiction",
+    "region": "Asia"
+  },
+  {
+    "title": "The Labyrinth House Murders",
+    "author": "Yukito Ayatsuji",
+    "genre": "Crime fiction",
+    "region": "Asia"
+  },
+  {
+    "title": "The Last Lecture",
+    "author": "Randy Pausch",
+    "genre": "Biography / autobiography",
+    "region": "USA"
+  },
+  {
+    "title": "The Little Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "genre": "Coming of age",
+    "region": "Europe"
+  },
+  {
+    "title": "The Palace of Illusions",
+    "author": "Chitra Banerjee Divakaruni",
+    "genre": "Historical fiction",
+    "region": "India"
+  },
+  {
+    "title": "The Phoenix Pencil Company",
+    "author": "Allison King",
+    "genre": "Magical realism",
+    "region": "Asia"
+  },
+  {
+    "title": "The Power",
+    "author": "Naomi Alderman",
+    "genre": "Science fiction",
+    "region": "UK"
+  },
+  {
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "genre": "Non-fiction",
+    "region": "USA"
+  },
+  {
+    "title": "The Revenge of the Tipping Point",
+    "author": "Malcolm Gladwell",
+    "genre": "Non-fiction",
+    "region": "USA"
+  },
+  {
+    "title": "The Secret Garden",
+    "author": "Frances Hodgson Burnett",
+    "genre": "Coming of age",
+    "region": "UK"
+  },
+  {
+    "title": "The Secret Place",
+    "author": "Tana French",
+    "genre": "Crime fiction",
+    "region": "Ireland"
+  },
+  {
+    "title": "The Thursday Murder Club Series",
+    "author": "Richard Osman",
+    "genre": "Crime fiction",
+    "region": "UK"
+  },
+  {
+    "title": "The Tipping Point",
+    "author": "Malcolm Gladwell",
+    "genre": "Non-fiction",
+    "region": "USA"
+  },
+  {
+    "title": "The Twentieth Wife",
+    "author": "Indu Sundaresan",
+    "genre": "Historical fiction",
+    "region": "India"
+  },
+  {
+    "title": "To Sir, With Love",
+    "author": "E.R. Braithwaite",
+    "genre": "Coming of age",
+    "region": "UK"
+  },
+  {
+    "title": "Tomorrow, and Tomorrow, and Tomorrow",
+    "author": "Gabrielle Zevin",
+    "genre": "Literary fiction",
+    "region": "USA"
+  },
+  {
+    "title": "We Solve Murders",
+    "author": "Richard Osman",
+    "genre": "Crime fiction",
+    "region": "UK"
+  }
+]
