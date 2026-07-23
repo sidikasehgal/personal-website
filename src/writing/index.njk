@@ -9,102 +9,25 @@ permalink: /writing/
   <h1>On UX Writing</h1>
   <p class="writing-page__intro">Articles, talks, and posts on UX writing.</p>
 
-  {% set articles = [
-    {
-      title: "How to define the right UX team goals",
-      url: "https://uxcontent.com/ux-team-goals/",
-      publisher: "UX Content Collective",
-      date: "2025-09-01",
-      dateDisplay: "September 2025"
-    },
-    {
-      title: "Writing just right: UX copy for B2B users",
-      url: "https://medium.com/rubrik-design/writing-just-right-ux-copy-for-b2b-users-172edf1c1cd4",
-      publisher: "Rubrik Design Blog",
-      date: "2025-06-01",
-      dateDisplay: "June 2025"
-    },
-    {
-      title: "UX writing is on the rise in India",
-      url: "https://uxcontent.com/how-can-ux-writing-flourish-in-india/",
-      publisher: "UX Content Collective",
-      date: "2024-08-01",
-      dateDisplay: "August 2024"
-    }
-  ] %}
-
-  {% set videos = [
-    {
-      title: "The rise of UX writing in India",
-      url: "https://www.youtube.com/watch?v=Xy6W2r3Q4LY",
-      publisher: "Writers of Silicon Valley",
-      date: "2025-02-01",
-      dateDisplay: "February 2025"
-    }
-  ] %}
-
-  {% set posts = [
-    {
-      title: "Facilitating naming features",
-      url: "https://www.linkedin.com/posts/sidika-sehgal-5b4b90136_the-first-few-times-i-was-asked-to-name-a-activity-7321427843022770178--w18",
-      publisher: "LinkedIn",
-      date: "2025-04-01",
-      dateDisplay: "April 2025"
-    },
-    {
-      title: "What makes for a great portfolio",
-      url: "https://www.linkedin.com/posts/sidika-sehgal-5b4b90136_ive-been-reviewing-a-lot-of-portfolios-lately-activity-7307324827097251840-TQcj",
-      publisher: "LinkedIn",
-      date: "2025-03-01",
-      dateDisplay: "March 2025"
-    },
-    {
-      title: "Taking complete ownership of your deliverable",
-      url: "https://www.linkedin.com/posts/sidika-sehgal-5b4b90136_as-a-ux-writer-what-does-it-mean-to-have-activity-7283014646070976512-nMBO",
-      publisher: "LinkedIn",
-      date: "2025-01-01",
-      dateDisplay: "January 2025"
-    },
-    {
-      title: "Know your design system",
-      url: "https://www.linkedin.com/posts/sidika-sehgal-5b4b90136_in-the-last-few-months-i-familiarised-myself-activity-7272863997677178881-WH9S",
-      publisher: "LinkedIn",
-      date: "2024-12-01",
-      dateDisplay: "December 2024"
-    },
-    {
-      title: "Using synchronous UX reviews to build alignment",
-      url: "https://www.linkedin.com/posts/sidika-sehgal-5b4b90136_a-few-months-back-when-i-joined-a-new-team-activity-7262720935479115776-d77O",
-      publisher: "LinkedIn",
-      date: "2024-11-01",
-      dateDisplay: "November 2024"
-    },
-    {
-      title: "How to get better feedback from your stakeholders",
-      url: "https://www.linkedin.com/posts/sidika-sehgal-5b4b90136_can-we-find-a-different-word-for-this-activity-7244567561898491904-LPcC",
-      publisher: "LinkedIn",
-      date: "2024-09-01",
-      dateDisplay: "September 2024"
-    }
-  ] %}
-
   {% macro writingSection(heading, items) %}
+    {% if items and items.length %}
     <div class="writing-section">
       <h2 class="writing-section__heading">{{ heading }}</h2>
       <div class="writing-list">
         {% for item in items | sort(attribute='date', reverse=true) %}
           <div class="writing-item">
             <a class="writing-item__link" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
-            <p class="writing-item__meta">{{ item.publisher }} &middot; {{ item.dateDisplay }}</p>
+            <p class="writing-item__meta">{{ item.publisher }} &middot; {{ item.date | monthYear }}</p>
           </div>
         {% endfor %}
       </div>
     </div>
+    {% endif %}
   {% endmacro %}
 
-  {{ writingSection("Articles", articles) }}
-  {{ writingSection("Videos", videos) }}
-  {{ writingSection("Posts", posts) }}
+  {{ writingSection("Articles", writing.articles) }}
+  {{ writingSection("Videos", writing.videos) }}
+  {{ writingSection("Posts", writing.posts) }}
 </div>
 </section>
 
