@@ -1,61 +1,104 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
 backend:
   name: github
   repo: sidikasehgal/personal-website
   branch: main
 
-media_folder: "src/images/uploads"
-public_folder: "/images/uploads"
+media_folder: src/images/uploads
+public_folder: /images/uploads
 
-collections:
-  - name: "bookshelf"
-    label: "Bookshelf"
-    folder: "src/bookshelf"
-    create: true
-    slug: "{{slug}}"
+singletons:
+  - name: writing
+    label: On UX Writing
+    file: src/_data/writing.json
+    icon: article
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Cover image", name: "cover", widget: "image", required: false }
-      - label: "Rating"
-        name: "rating"
-        widget: "select"
-        options: ["5", "4", "3", "2", "1"]
+      - name: articles
+        label: Articles
+        label_singular: Article
+        widget: list
+        summary: "{{fields.title}}"
         required: false
-      - { label: "Notes", name: "body", widget: "markdown", required: false }
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: url, label: Link, widget: string }
+          - { name: publisher, label: Publisher, widget: string }
+          - { name: date, label: Date published, widget: datetime, type: date, format: "YYYY-MM-DD" }
+      - name: videos
+        label: Videos
+        label_singular: Video
+        widget: list
+        summary: "{{fields.title}}"
+        required: false
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: url, label: Link, widget: string }
+          - { name: publisher, label: Publisher, widget: string }
+          - { name: date, label: Date published, widget: datetime, type: date, format: "YYYY-MM-DD" }
+      - name: posts
+        label: Posts
+        label_singular: Post
+        widget: list
+        summary: "{{fields.title}}"
+        required: false
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: url, label: Link, widget: string }
+          - { name: publisher, label: Publisher, widget: string }
+          - { name: date, label: Date published, widget: datetime, type: date, format: "YYYY-MM-DD" }
 
-  - name: "reading_list"
-    label: "Reading list"
-    folder: "src/reading-list"
-    create: true
-    slug: "{{slug}}"
+  - name: current_read
+    label: Currently reading
+    file: src/_data/currentRead.json
+    icon: auto_stories
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["Want to read", "Currently reading", "Finished"]
-      - { label: "Notes", name: "body", widget: "markdown", required: false }
+      - { name: title, label: Title, widget: string }
+      - { name: author, label: Author, widget: string }
+      - name: isbn
+        label: ISBN
+        widget: string
+        required: false
+        hint: "13-digit ISBN, no dashes. The cover image is pulled from Open Library. Leave blank to show no cover."
 
-  - name: "portfolio"
-    label: "Portfolio"
-    folder: "src/portfolio"
-    create: true
-    slug: "{{slug}}"
+  - name: books
+    label: Book recommendations
+    file: src/_data/books.json
+    icon: library_books
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image", required: false }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Link", name: "link", widget: "string", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-
-  - name: "writing"
-    label: "Writing"
-    folder: "src/writing"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - name: books
+        label: Books
+        label_singular: Book
+        widget: list
+        root: true
+        summary: "{{fields.title}} — {{fields.author}}"
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: author, label: Author, widget: string }
+          - name: genre
+            label: Genre
+            widget: select
+            options:
+              - Literary fiction
+              - Crime fiction
+              - Magical realism
+              - Historical fiction
+              - Coming of age
+              - Science fiction
+              - Play
+              - Non-fiction
+              - Biography / autobiography
+              - Business
+              - Food
+          - name: region
+            label: Region
+            widget: select
+            options:
+              - India
+              - Asia
+              - UK
+              - Ireland
+              - Europe
+              - USA
+              - South America
+              - Australia
