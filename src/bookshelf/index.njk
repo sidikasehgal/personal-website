@@ -8,19 +8,23 @@ permalink: /bookshelf/
   <h1>Bookshelf</h1>
 
   <h2 class="bookshelf-section__title">Currently Reading</h2>
+ {% if currentRead and currentRead.title %}
   <div class="current-read">
+    {% if currentRead.isbn %}
     <img
       class="current-read__cover"
-      src="https://covers.openlibrary.org/b/isbn/9781933368368-L.jpg"
-      alt="Cover of The Good Fairies of New York"
+      src="https://covers.openlibrary.org/b/isbn/{{ currentRead.isbn }}-L.jpg"
+      alt="Cover of {{ currentRead.title }}"
       loading="lazy"
       onerror="this.style.display='none'"
     />
+    {% endif %}
     <div class="current-read__details">
-      <p class="current-read__title">The Good Fairies of New York</p>
-      <p class="current-read__author">by Martin Millar</p>
+      <p class="current-read__title">{{ currentRead.title }}</p>
+      <p class="current-read__author">by {{ currentRead.author }}</p>
     </div>
   </div>
+  {% endif %}
 
   <h2 class="bookshelf-section__title">Recommendations</h2>
 
