@@ -55,11 +55,16 @@ singletons:
     fields:
       - { name: title, label: Title, widget: string }
       - { name: author, label: Author, widget: string }
-      - name: isbn
+- name: isbn
         label: ISBN
         widget: string
         required: false
-        hint: "13-digit ISBN, no dashes. The cover image is pulled from Open Library. Leave blank to show no cover."
+        hint: "13-digit ISBN, no dashes. Cover is pulled automatically from Open Library. Leave blank if you're using a cover image URL below."
+      - name: coverUrl
+        label: Cover image URL
+        widget: string
+        required: false
+        hint: "Optional. Paste a direct image link to use instead of the ISBN. Right-click any cover online and choose 'Copy image address'. Overrides the ISBN when both are filled."
 
   - name: books
     label: Book recommendations
