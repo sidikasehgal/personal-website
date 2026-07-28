@@ -10,10 +10,17 @@ permalink: /bookshelf/
   <h2 class="bookshelf-section__title">Currently Reading</h2>
  {% if currentRead and currentRead.title %}
   <div class="current-read">
-    {% if currentRead.isbn %}
+{% if currentRead.coverUrl %}
+      {% set coverSrc = currentRead.coverUrl %}
+    {% elif currentRead.isbn %}
+      {% set coverSrc = "https://covers.openlibrary.org/b/isbn/" + currentRead.isbn + "-L.jpg" %}
+    {% else %}
+      {% set coverSrc = "" %}
+    {% endif %}
+    {% if coverSrc %}
     <img
       class="current-read__cover"
-      src="https://covers.openlibrary.org/b/isbn/{{ currentRead.isbn }}-L.jpg"
+      src="{{ coverSrc }}"
       alt="Cover of {{ currentRead.title }}"
       loading="lazy"
       onerror="this.style.display='none'"
